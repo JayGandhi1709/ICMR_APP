@@ -45,7 +45,7 @@ class _HomePageState extends State<HomePage> {
       value: TextEditingController(),
     ),
     Question(
-      type: 'text',
+      type: 'date',
       question: "1A.2 : Date",
       value: TextEditingController(text: DateTime.now().toString()),
     ),
@@ -97,13 +97,13 @@ class _HomePageState extends State<HomePage> {
       value: TextEditingController(),
     ),
     Question(
-      type: 'radio',
+      type: 'checkbox',
       question: '1A.11 : Type of Health Care facility',
-      options: <RadioOption>[
-        RadioOption(label: "District Hospital (DH)"),
-        RadioOption(label: "Tertiary care center", isOther: true),
+      options: <CheckBoxOption>[
+        CheckBoxOption(label: "District Hospital (DH)"),
+        CheckBoxOption(label: "Tertiary care center", isOther: true,isOtherDate: true),
       ],
-      value: '',
+      value: <String>[],
     ),
   ];
 

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:form_builder_validators/form_builder_validators.dart';
 import 'package:icmr/components/custom_checkbox_form_field.dart';
+import 'package:icmr/components/custom_date.dart';
 import 'package:icmr/components/custom_radio_form_field.dart';
 import 'package:icmr/components/custome_text_form_field.dart';
 import 'package:icmr/components/models/checkbox_option.dart';
@@ -41,6 +40,8 @@ class MyForm extends StatelessWidget {
                   ? CustomTextFormField(
                       title: question.question,
                       controller: question.value,
+                      validator: question.validator,
+                      inputformatters: question.inputformatters,
                     )
                   : question.type == 'checkbox'
                       ? CustomCheckBoxFormField(
@@ -61,7 +62,9 @@ class MyForm extends StatelessWidget {
                               },
                               controller: question.value,
                             )
-                          : const SizedBox.shrink(),
+                          : question.type == "date"
+                              ? CustomDate(title: question.question)
+                              : const SizedBox.shrink(),
             );
 
             // if (question.type == "text") {

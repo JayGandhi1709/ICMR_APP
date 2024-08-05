@@ -3,6 +3,7 @@ class CheckBoxOption {
   final bool isOther;
   bool isSelected;
   String? error;
+  final bool isOtherDate;
   String value;
 
   CheckBoxOption({
@@ -10,6 +11,7 @@ class CheckBoxOption {
     this.isOther = false,
     this.isSelected = false,
     this.error,
+    this.isOtherDate = false,
     this.value = "",
   });
 

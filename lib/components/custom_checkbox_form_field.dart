@@ -55,36 +55,60 @@ class CustomCheckBoxFormField extends FormField<List<CheckBoxOption>> {
                         },
                       ),
                       if (option.isOther && option.isSelected)
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                          child: TextFormField(
-                            // initialValue: option.value,
-                            decoration: InputDecoration(
-                              labelText: 'Please specify',
-                              errorText: option.error,
-                            ),
-                            onChanged: (value) {
-                              state.didChange(state.value!
-                                ..[state.value!.indexOf(option)].value =
-                                    "${option.label} : $value");
+                        option.isOtherDate
+                            ? Padding(
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 16.0),
+                                child: TextFormField(
+                                  decoration: InputDecoration(
+                                    labelText: 'Please specify',
+                                    errorText: option.error,
+                                  ),
+                                  
+                                  validator: (value) {
+                                    if (option.isOther &&
+                                        option.isSelected &&
+                                        value!.isEmpty) {
+                                      option.error = 'Please specify';
+                                      return 'Please specify the other option';
+                                    }
+                                    return null;
+                                  },
+                                ),
+                              )
+                    
+                            : Padding(
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 16.0),
+                                child: TextFormField(
+                                  // initialValue: option.value,
+                                  decoration: InputDecoration(
+                                    labelText: 'Please specify',
+                                    errorText: option.error,
+                                  ),
+                                  onChanged: (value) {
+                                    state.didChange(state.value!
+                                      ..[state.value!.indexOf(option)].value =
+                                          "${option.label} : $value");
 
-                              onChanged?.call(state.value!);
-                              controller.clear();
-                              controller.addAll(
-                                CheckBoxOption.getSelectedOptions(state.value!),
-                              );
-                            },
-                            validator: (value) {
-                              if (option.isOther &&
-                                  option.isSelected &&
-                                  value!.isEmpty) {
-                                option.error = 'Please specify';
-                                return 'Please specify the other option';
-                              }
-                              return null;
-                            },
-                          ),
-                        ),
+                                    onChanged?.call(state.value!);
+                                    controller.clear();
+                                    controller.addAll(
+                                      CheckBoxOption.getSelectedOptions(
+                                          state.value!),
+                                    );
+                                  },
+                                  validator: (value) {
+                                    if (option.isOther &&
+                                        option.isSelected &&
+                                        value!.isEmpty) {
+                                      option.error = 'Please specify';
+                                      return 'Please specify the other option';
+                                    }
+                                    return null;
+                                  },
+                                ),
+                              ),
                     ],
                   );
                 }),

@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 class Question {
   final String type;
   final String question;
+  final String? subtitle;
   final List<dynamic>? options;
   final String? Function(String?)? validator;
   final List<TextInputFormatter>? inputformatters;
@@ -13,6 +14,7 @@ class Question {
   Question({
     required this.type,
     required this.question,
+    this.subtitle,
     this.options,
     this.validator,
     this.inputformatters,

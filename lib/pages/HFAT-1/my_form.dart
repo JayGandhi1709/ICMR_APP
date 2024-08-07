@@ -34,37 +34,52 @@ class MyForm extends StatelessWidget {
           ),
           const SizedBox(height: 20),
           ...questions.map((question) {
-            return Padding(
-              padding: const EdgeInsets.only(bottom: 15),
-              child: question.type == "text"
-                  ? CustomTextFormField(
-                      title: question.question,
-                      controller: question.value,
-                      validator: question.validator,
-                      inputformatters: question.inputformatters,
-                    )
-                  : question.type == 'checkbox'
-                      ? CustomCheckBoxFormField(
+            return Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  question.question,
+                  style: const TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 15),
+                  child: question.type == "text"
+                      ? CustomTextFormField(
                           title: question.question,
-                          options: question.options is List<CheckBoxOption>
-                              ? question.options as List<CheckBoxOption>
-                              : [],
+                          subtitle: question.subtitle,
                           controller: question.value,
+                          validator: question.validator,
+                          inputformatters: question.inputformatters,
                         )
-                      : question.type == 'radio'
-                          ? CustomRadioFormField(
+                      : question.type == 'checkbox'
+                          ? CustomCheckBoxFormField(
                               title: question.question,
-                              options: question.options is List<RadioOption>
-                                  ? question.options as List<RadioOption>
+                              subtitle: question.subtitle,
+                              options: question.options is List<CheckBoxOption>
+                                  ? question.options as List<CheckBoxOption>
                                   : [],
-                              onChanged: (value) {
-                                question.value = value;
-                              },
                               controller: question.value,
                             )
-                          : question.type == "date"
-                              ? CustomDate(title: question.question)
-                              : const SizedBox.shrink(),
+                          : question.type == 'radio'
+                              ? CustomRadioFormField(
+                                  title: question.question,
+                                  subtitle: question.subtitle,
+                                  options: question.options is List<RadioOption>
+                                      ? question.options as List<RadioOption>
+                                      : [],
+                                  onChanged: (value) {
+                                    question.value = value;
+                                  },
+                                  controller: question.value,
+                                )
+                              : question.type == "date"
+                                  ? CustomDate(title: question.question)
+                                  : const SizedBox.shrink(),
+                ),
+              ],
             );
 
             // if (question.type == "text") {

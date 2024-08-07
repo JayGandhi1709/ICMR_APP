@@ -22,8 +22,8 @@ class CustomCheckBoxFormField extends FormField<List<CheckBoxOption>> {
             return Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(title),
-                subtitle != null ? Text(subtitle) : const SizedBox(),
+                // Text(title,style: const TextStyle(fontWeight: FontWeight.bold),),
+                // subtitle != null ? Text(subtitle,style: const TextStyle(fontWeight: FontWeight.w100,fontSize: 13,),) : const SizedBox(),
                 if (state.hasError)
                   Padding(
                     padding: const EdgeInsets.only(top: 8.0),

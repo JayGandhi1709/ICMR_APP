@@ -1,20 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:icmr/components/models/checkbox_option.dart';
-import 'package:icmr/components/models/question.dart';
-import 'package:icmr/components/models/radio_option.dart';
-
+import 'package:icmr/pages/HFAT-1/my_form.dart';
+import 'package:icmr/pages/HFAT-1/question.dart';
 import 'package:icmr/utils/custom_app_bar.dart';
 
-import 'my_form.dart';
-
-class hfat1 extends StatefulWidget {
-  const hfat1({super.key});
+class HFAT1 extends StatefulWidget {
+  const HFAT1({super.key});
 
   @override
-  State<hfat1> createState() => _hfat1State();
+  State<HFAT1> createState() => _HFAT1State();
 }
 
-class _hfat1State extends State<hfat1> {
+class _HFAT1State extends State<HFAT1> {
   final _formKey = GlobalKey<FormState>();
 
   // final List<RadioOption> _options = [
@@ -40,75 +36,6 @@ class _hfat1State extends State<hfat1> {
 
   bool isDataSubmited = false;
 
-  final List<Question> que = [
-    Question(
-      type: 'text',
-      question: "1A.1 : Assessor's Name",
-      value: TextEditingController(),
-    ),
-    Question(
-      type: 'date',
-      question: "1A.2 : Date",
-      value: TextEditingController(text: DateTime.now().toString()),
-    ),
-    Question(
-      type: 'radio',
-      question: '1A.3 : Code',
-      options: <RadioOption>[
-        RadioOption(label: "GJBRC_DH"),
-        RadioOption(label: "ORPUR_DH"),
-        RadioOption(label: "MPBHS_DH"),
-        RadioOption(label: "PBLDH_DH"),
-        RadioOption(label: "PYPDY_DH"),
-      ],
-      value: '',
-    ),
-    Question(
-      type: 'text',
-      question: "1A.4 : Block Name",
-      value: TextEditingController(),
-    ),
-    Question(
-      type: 'text',
-      question: "1A.5 : Healthcare Facility Name",
-      value: TextEditingController(),
-    ),
-    Question(
-      type: 'text',
-      question: "1A.6 : Healthcare Facility Address",
-      value: TextEditingController(),
-    ),
-    Question(
-      type: 'text',
-      question: "1A.7 : Name of the hospital Superintendent:",
-      value: TextEditingController(),
-    ),
-    Question(
-      type: 'text',
-      question: "1A.8 : Contact Number of the hospital Superintendent:",
-      value: TextEditingController(),
-    ),
-    Question(
-      type: 'text',
-      question: "1A.9 : Email ID:",
-      value: TextEditingController(),
-    ),
-    Question(
-      type: 'text',
-      question: "1A.10 : Location:",
-      value: TextEditingController(),
-    ),
-    Question(
-      type: 'checkbox',
-      question: '1A.11 : Type of Health Care facility',
-      options: <CheckBoxOption>[
-        CheckBoxOption(label: "District Hospital (DH)"),
-        CheckBoxOption(label: "Tertiary care center", isOther: true,isOtherDate: true),
-      ],
-      value: <String>[],
-    ),
-  ];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -121,10 +48,79 @@ class _hfat1State extends State<hfat1> {
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
           child: Column(
             children: [
+              // MyForm(
+              //   title: "1A. Health Facility Information",
+              //   formKey: _formKey,
+              //   questions: hfat1FormA,
+              // ),
               MyForm(
-                  title: "1A. Health Facility Information",
-                  formKey: _formKey,
-                  questions: que),
+                title: "1B. Infastructure",
+                formKey: _formKey,
+                questions: hfat1FormB,
+              ),
+
+              // Table(
+              //   border: TableBorder.all(),
+              //   columnWidths: const <int, TableColumnWidth>{
+              //     0: FlexColumnWidth(),
+              //     1: FixedColumnWidth(250),
+              //     2: FixedColumnWidth(100),
+              //     3: FixedColumnWidth(100),
+              //     4: FixedColumnWidth(100),
+              //   },
+              //   children: [
+              //     TableRow(
+              //       children: [
+              //         TableCell(
+              //           child: Text('Manpower'),
+              //         ),
+              //         TableCell(
+              //           child: Text('Number'),
+              //         ),
+              //         TableCell(
+              //           child: Text('24/7 Availablity'),
+              //         ),
+              //         TableCell(
+              //           child: Text('On-site Availability'),
+              //         ),
+              //         TableCell(
+              //           child: Text('On-call Availability'),
+              //         ),
+              //       ],
+              //     ),
+              //     TableRow(
+              //       children: [
+              //         TableCell(
+              //           child: Row(
+              //             children: [
+              //               Checkbox(
+              //                 value: false,
+              //                 onChanged: null,
+              //               ),
+              //               Text('Facilty/Consultant'),
+              //             ],
+              //           ),
+              //         ),
+              //         TableCell(
+              //           child: CustomTextFormField(
+              //             title: 'Number',
+              //             controller: TextEditingController(),
+              //           ),
+              //         ),
+              //         TableCell(
+              //           child: Text('Cell 6'),
+              //         ),
+              //         TableCell(
+              //           child: Text('Cell 5'),
+              //         ),
+              //         TableCell(
+              //           child: Text('Cell 6'),
+              //         ),
+              //       ],
+              //     ),
+              //   ],
+              // ),
+              
               const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () {
@@ -154,7 +150,7 @@ class _hfat1State extends State<hfat1> {
                       const SizedBox(height: 20),
                       const Text("Submitted Data"),
                       const SizedBox(height: 10),
-                      ...que.map((question) {
+                      ...hfat1FormB.map((question) {
                         return Padding(
                           padding: const EdgeInsets.only(bottom: 15),
                           child: question.type == "text"

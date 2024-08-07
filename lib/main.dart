@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:icmr/pages/HomePage/home_page.dart';
+import 'package:icmr/pages/HFAT-1/hfat_1.dart';
 
 
 void main() {
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Color.fromRGBO(242, 247, 255, 1),),
         useMaterial3: true,
       ),
-      home: const HomePage(),
+      home: const HFAT1(),
     );
   }
 }

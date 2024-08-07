@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:icmr/pages/homePage/home_page.dart';
+import 'package:icmr/pages/HomePage/home_page.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: Color.fromRGBO(242, 247, 255, 1),),
         useMaterial3: true,
       ),
       home: const HomePage(),

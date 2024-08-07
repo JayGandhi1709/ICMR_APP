@@ -60,11 +60,13 @@ class _HFAT1State extends State<HFAT1> {
               ),
 
               // Table(
-              //   border: TableBorder.all(),
+              //   border: TableBorder.all(
+              //     width: 2
+              //   ),
               //   columnWidths: const <int, TableColumnWidth>{
               //     0: FlexColumnWidth(),
-              //     1: FixedColumnWidth(250),
-              //     2: FixedColumnWidth(100),
+              //     1: FixedColumnWidth(200),
+              //     2: FixedColumnWidth(250),
               //     3: FixedColumnWidth(100),
               //     4: FixedColumnWidth(100),
               //   },
@@ -108,7 +110,14 @@ class _HFAT1State extends State<HFAT1> {
               //           ),
               //         ),
               //         TableCell(
-              //           child: Text('Cell 6'),
+              //           child: CustomRadioFormField(
+              //             title: '24/7 Availablity',
+              //             options: [
+              //               RadioOption(label: "Yes"),
+              //               RadioOption(label: "No"),
+              //             ],
+              //             controller: '',
+              //           ),
               //         ),
               //         TableCell(
               //           child: Text('Cell 5'),

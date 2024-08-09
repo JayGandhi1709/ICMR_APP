@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
 
 class CustomNavBar extends StatefulWidget {
-  CustomNavBar({super.key, this.selectedIndex = -1});
+  CustomNavBar({
+    super.key,
+    this.selectedIndex = 0,
+    required this.onTap,
+  });
   int selectedIndex;
+  // void Function(int index)? onTap;
+  // i want onTap to be a function that takes an integer and returns void
+  Function(int index) onTap;
 
   @override
   State<CustomNavBar> createState() => _CustomNavBarState();
@@ -17,8 +24,7 @@ class _CustomNavBarState extends State<CustomNavBar> {
     "What's New"
   ];
 
-  // int hoveredIndex = -1;
-  // int selectedIndex = -1;
+  int hoverdedIndex = -1;
 
   @override
   Widget build(BuildContext context) {
@@ -32,33 +38,28 @@ class _CustomNavBarState extends State<CustomNavBar> {
               children: [
                 InkWell(
                   hoverColor: Colors.transparent,
-                  // onHover: (value) {
-                  //   // print(value);
-                  //   setState(() {
-                  //     if (value) {
-                  //       hoveredIndex = index;
-                  //     } else {
-                  //       hoveredIndex = -1;
-                  //     }
-                  //   });
-                  // },
-                  onTap: () {
-                    // print(value);
+                  onHover: (value) {
                     setState(() {
-                      widget.selectedIndex = index;
+                      if (value) {
+                        hoverdedIndex = index;
+                      } else {
+                        hoverdedIndex = -1;
+                      }
                     });
+                  },
+                  onTap: () {
+                    widget.onTap(index);
                   },
                   splashColor: Colors.transparent,
                   focusColor: Colors.transparent,
                   highlightColor: Colors.transparent,
-
                   child: Container(
                     padding: const EdgeInsets.symmetric(vertical: 10),
                     decoration: BoxDecoration(
                       border: Border(
                         bottom: BorderSide(
-                          // color: Colors.black,
-                          color: index == widget.selectedIndex
+                          color: index == widget.selectedIndex ||
+                                  index == hoverdedIndex
                               ? Colors.black
                               : Colors.transparent,
                           width: 2,
@@ -82,7 +83,7 @@ class _CustomNavBarState extends State<CustomNavBar> {
             );
           }).toList(),
         ),
-        Spacer(),
+        const Spacer(),
         GestureDetector(
           onTap: () {
             print("object");

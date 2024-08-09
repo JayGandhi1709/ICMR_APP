@@ -1,9 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:icmr/pages/HFAT-1/hfat_1.dart';
-
+import 'package:flutter/services.dart';
+import 'package:icmr/pages/HomePage/home_page.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
-  runApp(const MyApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations(
+      [DeviceOrientation.landscapeLeft, DeviceOrientation.landscapeRight]).then(
+    (_) {
+      runApp(
+        const MyApp(),
+      );
+    },
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -14,10 +23,15 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Color.fromRGBO(242, 247, 255, 1),),
+        textTheme: GoogleFonts.poppinsTextTheme(
+          Theme.of(context).textTheme,
+        ),
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Color.fromRGBO(242, 247, 255, 1),
+        ),
         useMaterial3: true,
       ),
-      home: const HFAT1(),
+      home: const HomePage(),
     );
   }
 }

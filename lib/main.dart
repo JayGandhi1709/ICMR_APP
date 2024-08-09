@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:icmr/pages/HomePage/home_page.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:icmr/pages/main_home_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: const HomePage(),
+      home: const MainHomePage(),
     );
   }
 }

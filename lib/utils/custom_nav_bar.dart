@@ -1,21 +1,23 @@
 import 'package:flutter/material.dart';
 
-class CustomNavBar extends StatefulWidget {
-  CustomNavBar({
+class customNavBar extends StatefulWidget {
+  customNavBar({
     super.key,
     this.selectedIndex = 0,
     required this.onTap,
   });
+
   int selectedIndex;
+
   // void Function(int index)? onTap;
   // i want onTap to be a function that takes an integer and returns void
   Function(int index) onTap;
 
   @override
-  State<CustomNavBar> createState() => _CustomNavBarState();
+  State<customNavBar> createState() => _customNavBarState();
 }
 
-class _CustomNavBarState extends State<CustomNavBar> {
+class _customNavBarState extends State<customNavBar> {
   List navItem = [
     "Home",
     "About Project",
@@ -54,13 +56,14 @@ class _CustomNavBarState extends State<CustomNavBar> {
                   focusColor: Colors.transparent,
                   highlightColor: Colors.transparent,
                   child: Container(
-                    padding: const EdgeInsets.symmetric(vertical: 10),
+                    padding:
+                        const EdgeInsets.symmetric(vertical: 8, horizontal: 15),
                     decoration: BoxDecoration(
                       border: Border(
                         bottom: BorderSide(
                           color: index == widget.selectedIndex ||
                                   index == hoverdedIndex
-                              ? Colors.black
+                              ? Color.fromRGBO(67, 117, 246, 1)
                               : Colors.transparent,
                           width: 2,
                         ),

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../pages/SignInPage/signin.dart';
+
 class customNavBar extends StatefulWidget {
   customNavBar({
     super.key,
@@ -89,7 +91,12 @@ class _customNavBarState extends State<customNavBar> {
         const Spacer(),
         GestureDetector(
           onTap: () {
-            print("object");
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const SignIn(),
+              ),
+            );
           },
           child: Container(
             height: MediaQuery.of(context).size.height * 0.06,

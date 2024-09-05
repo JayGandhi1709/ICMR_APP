@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:icmr/pages/HomePage/home_page.dart';
 import 'package:icmr/pages/ProjectSite/projectsite.dart';
+import 'package:icmr/pages/SignInPage/signin.dart';
 import 'package:icmr/utils/custom_app_bar.dart';
 import 'package:icmr/utils/custom_nav_bar.dart';
 
@@ -21,6 +22,7 @@ class _MainHomePageState extends State<MainHomePage> {
     const ProjectSites(),
     const Text("reasearch Team"),
     const Text("what's new"),
+    const SignIn(),
   ];
 
   @override

@@ -23,7 +23,7 @@ class _customNavBarState extends State<customNavBar> {
   List navItem = [
     "Home",
     "About Project",
-    "Project",
+    "Project Site",
     "Research Team",
     "What's New"
   ];
@@ -89,37 +89,41 @@ class _customNavBarState extends State<customNavBar> {
           }).toList(),
         ),
         const Spacer(),
-        GestureDetector(
-          onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => const SignIn(),
-              ),
-            );
-          },
-          child: Container(
-            height: MediaQuery.of(context).size.height * 0.06,
-            width: MediaQuery.of(context).size.width * 0.09,
-            decoration: const BoxDecoration(
-              color: Color.fromRGBO(21, 34, 102, 1),
-              borderRadius: BorderRadius.all(
-                Radius.circular(
-                  30,
+        if (widget.selectedIndex != 5)
+          GestureDetector(
+            onTap: () {
+              setState(() {
+                widget.onTap(5);
+              });
+              // Navigator.push(
+              //   context,
+              //   MaterialPageRoute(
+              //     builder: (context) => const SignIn(),
+              //   ),
+              // );
+            },
+            child: Container(
+              height: MediaQuery.of(context).size.height * 0.06,
+              width: MediaQuery.of(context).size.width * 0.09,
+              decoration: const BoxDecoration(
+                color: Color.fromRGBO(21, 34, 102, 1),
+                borderRadius: BorderRadius.all(
+                  Radius.circular(
+                    30,
+                  ),
                 ),
               ),
-            ),
-            child: Center(
-              child: Text(
-                "Sign In",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: MediaQuery.of(context).size.width * 0.014,
+              child: Center(
+                child: Text(
+                  "Sign In",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: MediaQuery.of(context).size.width * 0.014,
+                  ),
                 ),
               ),
             ),
           ),
-        ),
       ],
     );
   }

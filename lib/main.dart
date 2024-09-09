@@ -5,6 +5,8 @@ import 'package:icmr/pages/HomePage/home_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:icmr/pages/main_home_screen.dart';
 
+import 'components/Layout/Forms_Layout.dart';
+
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations(
@@ -24,8 +26,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         textTheme: GoogleFonts.poppinsTextTheme(
           Theme.of(context).textTheme,
@@ -35,7 +35,10 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: const FormA(),
+      home: const FormLayout(
+        heading: 'abc',
+        title: 'hello',
+      ),
     );
   }
 }

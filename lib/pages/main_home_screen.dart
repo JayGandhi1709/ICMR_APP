@@ -15,7 +15,7 @@ class MainHomePage extends StatefulWidget {
 }
 
 class _MainHomePageState extends State<MainHomePage> {
-  int selectedIndex = 0;
+  int selectedIndex = 5;
   List<Widget> screens = [
     const HomePage(),
     const AboutProjectPage(),

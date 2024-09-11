@@ -51,13 +51,13 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return PreferredSize(
-      preferredSize: Size.fromHeight(100.0), // Height of the app bar
+      preferredSize: const Size.fromHeight(100.0), // Height of the app bar
       child: AppBar(
         // Hides default back button
         backgroundColor: Colors.white,
         // AppBar background color
         flexibleSpace: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             InkWell(
@@ -114,5 +114,6 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     );
   }
 
-  Size get preferredSize => Size.fromHeight(100);
+  @override
+  Size get preferredSize => const Size.fromHeight(100);
 }

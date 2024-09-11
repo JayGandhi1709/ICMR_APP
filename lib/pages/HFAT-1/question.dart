@@ -68,7 +68,7 @@ final List<Question> hfat1FormA = [
       RadioOption(label: "District Hospital (DH)"),
       RadioOption(label: "Tertiary care center"),
     ],
-    value: <String>[],
+    value: '',
   ),
   Question(
     type: 'radio',
@@ -81,7 +81,7 @@ final List<Question> hfat1FormA = [
       RadioOption(
           label: "Private: Medical College/ Corporate hospital/NGO Hospital"),
     ],
-    value: <String>[],
+    value: '',
   ),
 ];
 

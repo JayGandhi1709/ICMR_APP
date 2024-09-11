@@ -38,12 +38,13 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: FormLayout(
-        formKey: _formKey,
-        questions: hfat1FormA,
-        heading: "hello",
-        title: "title",
-      ),
+      home: MainHomePage(),
+      // FormLayout(
+      //   formKey: _formKey,
+      //   questions: hfat1FormA,
+      //   heading: "hello",
+      //   title: "title",
+      // ),
     );
   }
 }

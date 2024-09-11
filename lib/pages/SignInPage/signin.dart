@@ -89,7 +89,7 @@ class _SignInState extends State<SignIn> {
                       keyboardType: TextInputType.visiblePassword,
                       obscureText: isShow,
                       decoration: InputDecoration(
-                        suffix: IconButton(
+                        suffixIcon: IconButton(
                             onPressed: () {
                               setState(() {
                                 isShow = !isShow;
@@ -99,7 +99,7 @@ class _SignInState extends State<SignIn> {
                                 ?const Icon(Icons.visibility_off) :const Icon(Icons.visibility)
                                 ),
                         contentPadding: const EdgeInsets.symmetric(
-                          vertical: 10.0,
+                          vertical: 20.0,
                           horizontal: 10.0,
                         ),
                         border: const OutlineInputBorder(
@@ -120,14 +120,6 @@ class _SignInState extends State<SignIn> {
                     // ElevatedButton(onPressed: (){}, child: Text('Sign in'))
                     ElevatedButton(
                       onPressed: () {},
-                      child: Text(
-                        "Sign in",
-                        style: TextStyle(
-                          fontSize: MediaQuery.of(context).size.width * 0.013,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                        ),
-                      ),
                       style: ButtonStyle(
                         backgroundColor: WidgetStateProperty.all(
                           const Color.fromRGBO(21, 34, 102, 1),
@@ -142,8 +134,16 @@ class _SignInState extends State<SignIn> {
                         minimumSize: WidgetStateProperty.all(
                           Size(
                             MediaQuery.of(context).size.width * 0.4,
-                            MediaQuery.of(context).size.height * 0.05,
+                            MediaQuery.of(context).size.height * 0.09,
                           ),
+                        ),
+                      ),
+                      child: Text(
+                        "Sign in",
+                        style: TextStyle(
+                          fontSize: MediaQuery.of(context).size.width * 0.017,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
                         ),
                       ),
                     ),

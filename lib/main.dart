@@ -36,7 +36,10 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: const MainHomePage(),
+      home: FormLayout(
+        heading: "hello",
+        title: "title",
+      ),
     );
   }
 }

@@ -7,9 +7,11 @@ class customNavBar extends StatefulWidget {
     super.key,
     this.selectedIndex = 0,
     required this.onTap,
+    required this.navItem,
   });
 
   int selectedIndex;
+  final List navItem;
 
   // void Function(int index)? onTap;
   // i want onTap to be a function that takes an integer and returns void
@@ -20,13 +22,13 @@ class customNavBar extends StatefulWidget {
 }
 
 class _customNavBarState extends State<customNavBar> {
-  List navItem = [
-    "Home",
-    "About Project",
-    "Project Site",
-    "Research Team",
-    "What's New"
-  ];
+  // List navItem = [
+  //   "Home",
+  //   "About Project",
+  //   "Project Site",
+  //   "Research Team",
+  //   "What's New"
+  // ];
 
   int hoverdedIndex = -1;
 
@@ -35,7 +37,11 @@ class _customNavBarState extends State<customNavBar> {
     return Row(
       children: [
         Row(
-          children: navItem.asMap().entries.map<Widget>((entry) {
+          children: widget.navItem
+              .sublist(0, widget.navItem.length - 1)
+              .asMap()
+              .entries
+              .map<Widget>((entry) {
             int index = entry.key;
             String item = entry.value;
             return Row(
@@ -52,7 +58,10 @@ class _customNavBarState extends State<customNavBar> {
                     });
                   },
                   onTap: () {
-                    widget.onTap(index);
+                    setState(() {
+                      widget.onTap(index); // Update selected index
+                      widget.selectedIndex = index; // Update the current tab
+                    });
                   },
                   splashColor: Colors.transparent,
                   focusColor: Colors.transparent,
@@ -89,7 +98,7 @@ class _customNavBarState extends State<customNavBar> {
           }).toList(),
         ),
         const Spacer(),
-        if (widget.selectedIndex != 5)
+        if (widget.selectedIndex != widget.navItem.length - 1)
           GestureDetector(
             onTap: () {
               setState(() {
@@ -115,7 +124,7 @@ class _customNavBarState extends State<customNavBar> {
               ),
               child: Center(
                 child: Text(
-                  "Sign In",
+                  widget.navItem.last,
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: MediaQuery.of(context).size.width * 0.014,

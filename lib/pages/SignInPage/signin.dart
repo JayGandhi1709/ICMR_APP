@@ -89,7 +89,7 @@ class _SignInState extends State<SignIn> {
                       keyboardType: TextInputType.visiblePassword,
                       obscureText: isShow,
                       decoration: InputDecoration(
-                        suffix: IconButton(
+                        suffixIcon: IconButton(
                             onPressed: () {
                               setState(() {
                                 isShow = !isShow;
@@ -99,7 +99,7 @@ class _SignInState extends State<SignIn> {
                                 ?Icon(Icons.visibility_off) :Icon(Icons.visibility)
                                 ),
                         contentPadding: EdgeInsets.symmetric(
-                          vertical: 10.0,
+                          vertical: 20.0,
                           horizontal: 10.0,
                         ),
                         border: OutlineInputBorder(
@@ -123,7 +123,7 @@ class _SignInState extends State<SignIn> {
                       child: Text(
                         "Sign in",
                         style: TextStyle(
-                          fontSize: MediaQuery.of(context).size.width * 0.013,
+                          fontSize: MediaQuery.of(context).size.width * 0.017,
                           fontWeight: FontWeight.bold,
                           color: Colors.white,
                         ),
@@ -142,7 +142,7 @@ class _SignInState extends State<SignIn> {
                         minimumSize: WidgetStateProperty.all(
                           Size(
                             MediaQuery.of(context).size.width * 0.4,
-                            MediaQuery.of(context).size.height * 0.05,
+                            MediaQuery.of(context).size.height * 0.09,
                           ),
                         ),
                       ),

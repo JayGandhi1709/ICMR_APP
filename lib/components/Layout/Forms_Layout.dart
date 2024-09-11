@@ -5,8 +5,10 @@ import 'package:icmr/utils/custom_app_bar.dart';
 class FormLayout extends StatefulWidget {
   final String heading;
   final String title;
+  final String? subtitle;
 
-  const FormLayout({super.key, required this.heading, required this.title});
+  const FormLayout(
+      {super.key, required this.heading, required this.title, this.subtitle});
 
   @override
   State<FormLayout> createState() => _FormLayoutState();
@@ -39,24 +41,7 @@ class _FormLayoutState extends State<FormLayout> {
               children: [
                 Expanded(
                   flex: 2,
-                  // child: Sidepanel(),
-                  child: Container(
-                    height: MediaQuery.of(context).size.height * 0.76,
-                    width: MediaQuery.of(context).size.width,
-                    decoration: const BoxDecoration(
-                      color: Color.fromRGBO(242, 247, 255, 1),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey,
-                          blurRadius: 10,
-                          spreadRadius: 0.3,
-                        )
-                      ],
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(10),
-                      ),
-                    ),
-                  ),
+                  child: Sidepanel(),
                 ),
                 SizedBox(
                   width: MediaQuery.of(context).size.width * 0.01,
@@ -105,6 +90,19 @@ class _FormLayoutState extends State<FormLayout> {
                                   fontFamily: "poppins",
                                 ),
                               ),
+                              // SizedBox(
+                              //   height: 20,
+                              // ),
+                              // Text(
+                              //   widget.subtitle!,
+                              //   style: TextStyle(
+                              //     fontSize:
+                              //         MediaQuery.of(context).size.width * 0.02,
+                              //     fontWeight: FontWeight.bold,
+                              //     color: Colors.white,
+                              //     fontFamily: "poppins",
+                              //   ),
+                              // ),
                             ],
                           ),
                         ),

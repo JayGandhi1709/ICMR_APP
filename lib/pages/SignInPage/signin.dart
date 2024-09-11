@@ -21,7 +21,7 @@ class _SignInState extends State<SignIn> {
             child: Expanded(
               flex: 4,
               child: Padding(
-                padding: EdgeInsets.all(60),
+                padding: const EdgeInsets.all(60),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -35,7 +35,7 @@ class _SignInState extends State<SignIn> {
                         fontFamily: "poppins",
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     Text(
@@ -43,15 +43,15 @@ class _SignInState extends State<SignIn> {
                       style: TextStyle(
                         fontSize: MediaQuery.of(context).size.width * 0.013,
                         fontWeight: FontWeight.bold,
-                        color: Color.fromRGBO(68, 75, 89, 1),
+                        color: const Color.fromRGBO(68, 75, 89, 1),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
                     TextFormField(
                       keyboardType: TextInputType.emailAddress,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         contentPadding: EdgeInsets.symmetric(
                           vertical: 20.0,
                           horizontal: 10.0,
@@ -68,7 +68,7 @@ class _SignInState extends State<SignIn> {
                         ),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     Text(
@@ -76,10 +76,10 @@ class _SignInState extends State<SignIn> {
                       style: TextStyle(
                         fontSize: MediaQuery.of(context).size.width * 0.013,
                         fontWeight: FontWeight.bold,
-                        color: Color.fromRGBO(68, 75, 89, 1),
+                        color: const Color.fromRGBO(68, 75, 89, 1),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
                   
@@ -96,13 +96,13 @@ class _SignInState extends State<SignIn> {
                               });
                             },
                             icon: isShow
-                                ?Icon(Icons.visibility_off) :Icon(Icons.visibility)
+                                ?const Icon(Icons.visibility_off) :const Icon(Icons.visibility)
                                 ),
-                        contentPadding: EdgeInsets.symmetric(
+                        contentPadding: const EdgeInsets.symmetric(
                           vertical: 20.0,
                           horizontal: 10.0,
                         ),
-                        border: OutlineInputBorder(
+                        border: const OutlineInputBorder(
                           borderSide: BorderSide(
                             color: Color.fromRGBO(21, 34, 102, 1),
                           ),
@@ -114,23 +114,15 @@ class _SignInState extends State<SignIn> {
                         ),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 30,
                     ),
                     // ElevatedButton(onPressed: (){}, child: Text('Sign in'))
                     ElevatedButton(
                       onPressed: () {},
-                      child: Text(
-                        "Sign in",
-                        style: TextStyle(
-                          fontSize: MediaQuery.of(context).size.width * 0.017,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                        ),
-                      ),
                       style: ButtonStyle(
                         backgroundColor: WidgetStateProperty.all(
-                          Color.fromRGBO(21, 34, 102, 1),
+                          const Color.fromRGBO(21, 34, 102, 1),
                         ),
                         shape: WidgetStateProperty.all(
                           RoundedRectangleBorder(
@@ -146,6 +138,14 @@ class _SignInState extends State<SignIn> {
                           ),
                         ),
                       ),
+                      child: Text(
+                        "Sign in",
+                        style: TextStyle(
+                          fontSize: MediaQuery.of(context).size.width * 0.017,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                      ),
                     ),
                   ],
                 ),
@@ -155,9 +155,9 @@ class _SignInState extends State<SignIn> {
           Expanded(
             flex: 6,
             child: Container(
-              height: 500,
+              height: 400,
               width: 250,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage(
                     "signinImage.png",

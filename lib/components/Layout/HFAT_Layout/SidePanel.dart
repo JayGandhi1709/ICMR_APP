@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class Sidepanel extends StatefulWidget {
-  const Sidepanel({super.key});
+  const Sidepanel({super.key, required this.hfat1list});
+
+  final List<String> hfat1list;
 
   @override
   State<Sidepanel> createState() => _SidepanelState();
@@ -10,15 +12,7 @@ class Sidepanel extends StatefulWidget {
 class _SidepanelState extends State<Sidepanel> {
   int selectedTile = 0;
 
-  List<String> list = [
-    "List 1",
-    "List 2",
-    "List 3",
-    "List 4",
-    "List 5",
-    "List 6",
-    "List 7",
-  ];
+  List<String> list = [];
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +33,7 @@ class _SidepanelState extends State<Sidepanel> {
         ),
       ),
       child: ListView.builder(
-        itemCount: list.length,
+        itemCount: widget.hfat1list.length,
         itemBuilder: (context, index) {
           return ListTile(
             title: Container(
@@ -53,7 +47,7 @@ class _SidepanelState extends State<Sidepanel> {
                     : null,
               ),
               child: Text(
-                list[index],
+                widget.hfat1list[index],
                 style: TextStyle(
                   color: selectedTile == index ? Colors.white : Colors.black,
                 ),

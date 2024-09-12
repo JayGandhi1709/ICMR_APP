@@ -1,22 +1,28 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 class Sidepanel extends StatefulWidget {
-  const Sidepanel({super.key, required this.hfat1list});
+  Sidepanel({
+    super.key,
+    required this.hfat1list,
+    required this.currentSideIndex,
+  });
 
   final List<String> hfat1list;
+  int currentSideIndex;
 
   @override
   State<Sidepanel> createState() => _SidepanelState();
 }
 
 class _SidepanelState extends State<Sidepanel> {
-  int selectedTile = 0;
-
   List<String> list = [];
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: EdgeInsets.only(top: 20),
       height: MediaQuery.of(context).size.height * 0.76,
       width: MediaQuery.of(context).size.width,
       decoration: const BoxDecoration(
@@ -42,23 +48,25 @@ class _SidepanelState extends State<Sidepanel> {
                 borderRadius: const BorderRadius.all(
                   Radius.circular(10),
                 ),
-                color: selectedTile == index
+                color: widget.currentSideIndex == index
                     ? Color.fromRGBO(21, 34, 102, 1)
                     : null,
               ),
               child: Text(
                 widget.hfat1list[index],
                 style: TextStyle(
-                  color: selectedTile == index ? Colors.white : Colors.black,
+                  color: widget.currentSideIndex == index
+                      ? Colors.white
+                      : Colors.black,
                 ),
               ),
             ),
-            onTap: () {
-              print("object");
-              setState(() {
-                selectedTile = index;
-              });
-            },
+            // onTap: () {
+            //   log(widget.currentSideIndex);
+            //   setState(() {
+            //     widget.currentSideIndex = index;
+            //   });
+            // },
           );
         },
       ),

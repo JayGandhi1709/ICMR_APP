@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:icmr/pages/Forms/HFAT-1/FormA.dart';
+import 'package:icmr/pages/Forms/HFAT-1/HFAT_1.dart';
+import 'package:icmr/pages/HFAT-1/hfat_1.dart';
 import 'package:icmr/pages/HFAT-1/question.dart';
 import 'package:icmr/pages/HomePage/home_page.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -26,7 +28,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _formKey = GlobalKey<FormState>();
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
@@ -38,13 +39,8 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: MainHomePage(),
-      // FormLayout(
-      //   formKey: _formKey,
-      //   questions: hfat1FormA,
-      //   heading: "hello",
-      //   title: "title",
-      // ),
+      home: HFAT1(),
+      // home: MainHomePage(),
     );
   }
 }

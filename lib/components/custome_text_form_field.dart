@@ -35,18 +35,21 @@ class CustomTextFormField extends FormField<String> {
                     ),
                   ),
                 const SizedBox(height: 10),
-                TextFormField(
-                  controller: controller,
-                  keyboardType: keyboardType,
-                  inputFormatters: inputformatters,
-                  onChanged: (value) {
-                    field.didChange(value);
-                    onChanged?.call(value);
-                  },
-                  decoration: const InputDecoration(
-                    border: OutlineInputBorder(),
+                SizedBox(
+                  width: 300,
+                  child: TextFormField(
+                    controller: controller,
+                    keyboardType: keyboardType,
+                    inputFormatters: inputformatters,
+                    onChanged: (value) {
+                      field.didChange(value);
+                      onChanged?.call(value);
+                    },
+                    decoration: const InputDecoration(
+                      border: OutlineInputBorder(),
+                    ),
+                    validator: validator ?? textValidator(controller.text),
                   ),
-                  validator: validator ?? textValidator(controller.text),
                 ),
               ],
             );

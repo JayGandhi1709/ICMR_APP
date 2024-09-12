@@ -3,14 +3,14 @@ import 'package:icmr/pages/HFAT-1/my_form.dart';
 import 'package:icmr/pages/HFAT-1/question.dart';
 import 'package:icmr/utils/custom_app_bar.dart';
 
-class HFAT1 extends StatefulWidget {
-  const HFAT1({super.key});
+class OLDHFAT1 extends StatefulWidget {
+  const OLDHFAT1({super.key});
 
   @override
-  State<HFAT1> createState() => _HFAT1State();
+  State<OLDHFAT1> createState() => _OLDHFAT1State();
 }
 
-class _HFAT1State extends State<HFAT1> {
+class _OLDHFAT1State extends State<OLDHFAT1> {
   final _formKey = GlobalKey<FormState>();
 
   // final List<RadioOption> _options = [
@@ -129,7 +129,7 @@ class _HFAT1State extends State<HFAT1> {
               //     ),
               //   ],
               // ),
-              
+
               const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () {

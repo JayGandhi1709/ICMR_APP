@@ -76,7 +76,7 @@ class _customNavBarState extends State<customNavBar> {
                                   index == hoverdedIndex
                               ? Color.fromRGBO(67, 117, 246, 1)
                               : Colors.transparent,
-                          width: 2,
+                          width: 1,
                         ),
                       ),
                     ),

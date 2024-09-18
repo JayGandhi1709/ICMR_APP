@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:icmr/components/Layout/HFAT_Layout/SidePanel.dart';
 import 'package:icmr/utils/custom_app_bar.dart';
 
-import '../../../pages/HFAT-1/my_form.dart';
-import '../../../pages/HFAT-1/question.dart';
 import '../../custom_checkbox_form_field.dart';
 import '../../custom_date.dart';
 import '../../custom_radio_form_field.dart';
@@ -60,7 +58,7 @@ class _FormLayoutState extends State<FormLayout> {
                 fontSize: MediaQuery.of(context).size.width * 0.022,
                 fontWeight: FontWeight.bold,
                 color: Colors.black,
-                fontFamily: "poppins",
+                fontFamily: "Poppins",
               ),
             ),
           ),
@@ -123,7 +121,7 @@ class _FormLayoutState extends State<FormLayout> {
                                             0.015,
                                     fontWeight: FontWeight.bold,
                                     color: Colors.white,
-                                    fontFamily: "poppins",
+                                    fontFamily: "Poppins",
                                   ),
                                 ),
                               ],
@@ -152,6 +150,18 @@ class _FormLayoutState extends State<FormLayout> {
                                               question.question,
                                               style: const TextStyle(
                                                 fontSize: 16,
+                                                fontFamily: 'Poppins',
+                                                fontWeight: FontWeight.bold,
+                                              ),
+                                            ),
+                                            SizedBox(
+                                              height: 20,
+                                            ),
+                                            Text(
+                                              question.subtitle!,
+                                              style: const TextStyle(
+                                                fontSize: 14,
+                                                fontFamily: 'Poppins',
                                                 fontWeight: FontWeight.bold,
                                               ),
                                             ),

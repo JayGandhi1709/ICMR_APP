@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 
 class Sidepanel extends StatefulWidget {
@@ -55,6 +53,8 @@ class _SidepanelState extends State<Sidepanel> {
               child: Text(
                 widget.hfat1list[index],
                 style: TextStyle(
+                  fontWeight: FontWeight.w600,
+                  fontFamily: "Poppins",
                   color: widget.currentSideIndex == index
                       ? Colors.white
                       : Colors.black,

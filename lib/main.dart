@@ -1,15 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:icmr/pages/Forms/HFAT-1/FormA.dart';
-import 'package:icmr/pages/Forms/HFAT-1/HFAT_1.dart';
-import 'package:icmr/pages/HFAT-1/hfat_1.dart';
-import 'package:icmr/pages/HFAT-1/question.dart';
-import 'package:icmr/pages/HomePage/home_page.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:icmr/pages/SignInPage/signin.dart';
-import 'package:icmr/pages/main_home_screen.dart';
-
-import 'components/Layout/HFAT_Layout/Forms_Layout.dart';
+import 'package:icmr/pages/Forms/HFAT-1/HFAT_1.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();

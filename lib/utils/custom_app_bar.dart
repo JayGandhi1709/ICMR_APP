@@ -60,53 +60,35 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            InkWell(
-              onTap: () {},
-              child: Image.asset(
-                '1.png',
-                height: MediaQuery.of(context).size.height * 0.15,
-                width: MediaQuery.of(context).size.width * 0.15,
-              ),
+            Image.asset(
+              '1.png',
+              height: MediaQuery.of(context).size.height * 0.15,
+              width: MediaQuery.of(context).size.width * 0.15,
             ),
-            InkWell(
-              onTap: () {},
-              child: Image.asset(
-                '2.png',
-                height: MediaQuery.of(context).size.height * 0.15,
-                width: MediaQuery.of(context).size.width * 0.15,
-              ),
+            Image.asset(
+              '2.png',
+              height: MediaQuery.of(context).size.height * 0.15,
+              width: MediaQuery.of(context).size.width * 0.15,
             ),
-            InkWell(
-              onTap: () {},
-              child: Image.asset(
-                '3.png',
-                height: MediaQuery.of(context).size.height * 0.15,
-                width: MediaQuery.of(context).size.width * 0.15,
-              ),
+            Image.asset(
+              '3.png',
+              height: MediaQuery.of(context).size.height * 0.15,
+              width: MediaQuery.of(context).size.width * 0.15,
             ),
-            InkWell(
-              onTap: () {},
-              child: Image.asset(
-                '4.png',
-                height: MediaQuery.of(context).size.height * 0.15,
-                width: MediaQuery.of(context).size.width * 0.15,
-              ),
+            Image.asset(
+              '4.png',
+              height: MediaQuery.of(context).size.height * 0.15,
+              width: MediaQuery.of(context).size.width * 0.15,
             ),
-            InkWell(
-              onTap: () {},
-              child: Image.asset(
-                '5.png',
-                height: MediaQuery.of(context).size.height * 0.15,
-                width: MediaQuery.of(context).size.width * 0.15,
-              ),
+            Image.asset(
+              '5.png',
+              height: MediaQuery.of(context).size.height * 0.15,
+              width: MediaQuery.of(context).size.width * 0.15,
             ),
-            InkWell(
-              onTap: () {},
-              child: Image.asset(
-                '6.png',
-                height: MediaQuery.of(context).size.height * 0.15,
-                width: MediaQuery.of(context).size.width * 0.15,
-              ),
+            Image.asset(
+              '6.png',
+              height: MediaQuery.of(context).size.height * 0.15,
+              width: MediaQuery.of(context).size.width * 0.15,
             ),
           ],
         ),

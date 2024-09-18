@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 import '../../../components/Layout/HFAT_Layout/Forms_Layout.dart';
-import '../../HFAT-1/question.dart';
+import 'FormA.dart';
+import 'FormB.dart';
+import 'FormC.dart';
 
 class HFAT1 extends StatefulWidget {
   const HFAT1({super.key});
@@ -31,7 +33,11 @@ class _HFAT1State extends State<HFAT1> {
   Widget build(BuildContext context) {
     final _formKey = GlobalKey<FormState>();
 
-    final List listOfQuestion = [hfat1FormA, hfat1FormB];
+    final List listOfQuestion = [
+      hfat1FormA,
+      hfat1FormB,
+      hfat1FormC,
+    ];
     return FormLayout(
       currentSideIndex: currentFormIndex,
       sidePanelList: sidepanelList,

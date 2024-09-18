@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:icmr/pages/Forms/HFAT-1/FormD.dart';
 
 import '../../../components/Layout/HFAT_Layout/Forms_Layout.dart';
 import 'FormA.dart';
 import 'FormB.dart';
 import 'FormC.dart';
+import 'FormE.dart';
 
 class HFAT1 extends StatefulWidget {
   const HFAT1({super.key});
@@ -14,7 +16,7 @@ class HFAT1 extends StatefulWidget {
 
 class _HFAT1State extends State<HFAT1> {
   bool isDataSubmited = false;
-  int currentFormIndex = 0;
+  int currentFormIndex = 3;
 
   final sidepanelList = [
     "1A. Health Facility Information",
@@ -37,6 +39,8 @@ class _HFAT1State extends State<HFAT1> {
       hfat1FormA,
       hfat1FormB,
       hfat1FormC,
+      hfat1FormD,
+      hfat1FormE,
     ];
     return FormLayout(
       currentSideIndex: currentFormIndex,
@@ -61,23 +65,6 @@ class _HFAT1State extends State<HFAT1> {
           }
         });
         print(currentFormIndex);
-        // if (_formKey.currentState!.validate()) {
-        //   _formKey.currentState!.save();
-        //   setState(() {
-        //     isDataSubmited = true;
-        //   });
-        //   ScaffoldMessenger.of(context).showSnackBar(
-        //     const SnackBar(content: Text('Form Submitted')),
-        //   );
-        // } else {
-        //   setState(() {
-        //     isDataSubmited = false;
-        //   });
-        //   ScaffoldMessenger.of(context).showSnackBar(
-        //     const SnackBar(content: Text('Please fill all the fields')),
-        //   );
-        // }
-        // currentFormIndex = currentFormIndex + 1;
       },
     );
   }

@@ -16,7 +16,8 @@ class HFAT1 extends StatefulWidget {
 
 class _HFAT1State extends State<HFAT1> {
   bool isDataSubmited = false;
-  int currentFormIndex = 3;
+  int currentFormIndex = 2;
+  final _formKey = GlobalKey<FormState>();
 
   final sidepanelList = [
     "1A. Health Facility Information",
@@ -31,17 +32,16 @@ class _HFAT1State extends State<HFAT1> {
     "1J. Referral Linkages",
   ];
 
+  final List listOfQuestion = [
+    hfat1FormA,
+    hfat1FormB,
+    hfat1FormC,
+    hfat1FormD,
+    hfat1FormE,
+  ];
+
   @override
   Widget build(BuildContext context) {
-    final _formKey = GlobalKey<FormState>();
-
-    final List listOfQuestion = [
-      hfat1FormA,
-      hfat1FormB,
-      hfat1FormC,
-      hfat1FormD,
-      hfat1FormE,
-    ];
     return FormLayout(
       currentSideIndex: currentFormIndex,
       sidePanelList: sidepanelList,

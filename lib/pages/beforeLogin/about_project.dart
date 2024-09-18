@@ -51,7 +51,8 @@ class _AboutProjectPageState extends State<AboutProjectPage> {
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.09,
                 ),
-                Expanded(
+                SizedBox(
+                  height: 300,
                   child: ListView.builder(
                     itemCount: emergencyConditions.length,
                     itemBuilder: (context, index) {
@@ -82,11 +83,15 @@ class _AboutProjectPageState extends State<AboutProjectPage> {
             flex: 5,
             child: Center(
               child: Container(
-                height: 100,
-                width: 100,
+                height: 350,
+                width: 350,
                 decoration: BoxDecoration(
-                    image: DecorationImage(
-                        image: AssetImage(images[currentphotoindex]))),
+                  image: DecorationImage(
+                    image: AssetImage(
+                      images[currentphotoindex],
+                    ),
+                  ),
+                ),
               ),
             ),
           ),

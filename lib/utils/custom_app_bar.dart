@@ -55,6 +55,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       child: AppBar(
         // Hides default back button
         backgroundColor: Colors.white,
+        surfaceTintColor: Colors.white,
         // AppBar background color
         flexibleSpace: Row(
           mainAxisAlignment: MainAxisAlignment.center,

@@ -55,7 +55,7 @@ class _FormLayoutState extends State<FormLayout> {
             child: Text(
               widget.heading,
               style: TextStyle(
-                fontSize: MediaQuery.of(context).size.width * 0.022,
+                fontSize: MediaQuery.of(context).size.width * 0.016,
                 fontWeight: FontWeight.bold,
                 color: Colors.black,
                 fontFamily: "Poppins",
@@ -80,7 +80,7 @@ class _FormLayoutState extends State<FormLayout> {
                   Expanded(
                     flex: 7,
                     child: Container(
-                      margin: EdgeInsets.only(right: 20),
+                      margin: const EdgeInsets.only(right: 20),
                       height: MediaQuery.of(context).size.height * 0.76,
                       width: MediaQuery.of(context).size.width,
                       decoration: const BoxDecoration(
@@ -133,8 +133,7 @@ class _FormLayoutState extends State<FormLayout> {
                               child: SingleChildScrollView(
                                 child: Padding(
                                   padding: const EdgeInsets.symmetric(
-                                    vertical: 16,
-                                    horizontal: 32,
+                                    horizontal: 24,
                                   ),
                                   child: Column(
                                     crossAxisAlignment:
@@ -154,17 +153,16 @@ class _FormLayoutState extends State<FormLayout> {
                                                 fontWeight: FontWeight.bold,
                                               ),
                                             ),
-                                            SizedBox(
-                                              height: 20,
-                                            ),
-                                            Text(
-                                              question.subtitle!,
-                                              style: const TextStyle(
-                                                fontSize: 14,
-                                                fontFamily: 'Poppins',
-                                                fontWeight: FontWeight.bold,
+                                            // const SizedBox(height: 10),
+                                            if (question.subtitle != null)
+                                              Text(
+                                                question.subtitle!,
+                                                style: const TextStyle(
+                                                  fontSize: 14,
+                                                  fontFamily: 'Poppins',
+                                                  fontWeight: FontWeight.bold,
+                                                ),
                                               ),
-                                            ),
                                             Padding(
                                               padding: const EdgeInsets.only(
                                                   bottom: 15),
@@ -231,52 +229,47 @@ class _FormLayoutState extends State<FormLayout> {
                                             ),
                                           ],
                                         );
-                                      }).toList(),
-                                      SizedBox(
-                                        height: 20,
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsets.all(16),
-                                        child: Row(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.center,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceBetween,
-                                          children: [
-                                            if (widget.prevText != null)
-                                              TextButton(
-                                                onPressed: widget.onPrevious,
-                                                child: Text(
-                                                  widget.prevText ?? "",
-                                                ),
-                                              ),
-                                            ElevatedButton(
-                                              onPressed: widget.onNext,
-                                              child: Text(
-                                                widget.nextText,
-                                                style: TextStyle(
-                                                  color: Colors.white,
-                                                ),
-                                              ),
-                                              style: ButtonStyle(
-                                                backgroundColor:
-                                                    WidgetStatePropertyAll(
-                                                  Color.fromRGBO(
-                                                    21,
-                                                    34,
-                                                    102,
-                                                    1,
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
+                                      }),
                                     ],
                                   ),
                                 ),
                               ),
+                            ),
+                          ),
+                          // const SizedBox(height: 20),
+                          Padding(
+                            padding: const EdgeInsets.all(16),
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                if (widget.prevText != null)
+                                  TextButton(
+                                    onPressed: widget.onPrevious,
+                                    child: Text(
+                                      widget.prevText ?? "",
+                                    ),
+                                  ),
+                                ElevatedButton(
+                                  onPressed: widget.onNext,
+                                  child: Text(
+                                    widget.nextText,
+                                    style: const TextStyle(
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                  style: const ButtonStyle(
+                                    backgroundColor: WidgetStatePropertyAll(
+                                      Color.fromRGBO(
+                                        21,
+                                        34,
+                                        102,
+                                        1,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
                             ),
                           ),
                         ],

@@ -20,7 +20,7 @@ class _SidepanelState extends State<Sidepanel> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(top: 20),
+      padding: const EdgeInsets.only(top: 20),
       height: MediaQuery.of(context).size.height * 0.76,
       width: MediaQuery.of(context).size.width,
       decoration: const BoxDecoration(
@@ -47,7 +47,7 @@ class _SidepanelState extends State<Sidepanel> {
                   Radius.circular(10),
                 ),
                 color: widget.currentSideIndex == index
-                    ? Color.fromRGBO(21, 34, 102, 1)
+                    ? const Color.fromRGBO(21, 34, 102, 1)
                     : null,
               ),
               child: Text(

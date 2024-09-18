@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:icmr/pages/HomePage/home_page.dart';
-import 'package:icmr/pages/HomePage/signIn_homePage.dart';
-import 'package:icmr/pages/ProjectSite/projectsite.dart';
-import 'package:icmr/pages/SignInPage/signin.dart';
-import 'package:icmr/pages/Objective/objective.dart';
-import 'package:icmr/pages/Outcomes/outcomes.dart';
 import 'package:icmr/utils/custom_app_bar.dart';
 import 'package:icmr/utils/custom_nav_bar.dart';
 
-import 'AboutProject/about_project.dart';
-import 'Methodology/methodology.dart';
+import 'afterLogin/methodology.dart';
+import 'afterLogin/objective.dart';
+import 'afterLogin/outcomes.dart';
+import 'afterLogin/signIn_homePage.dart';
+import 'beforeLogin/about_project.dart';
+import 'beforeLogin/home_page.dart';
+import 'beforeLogin/projectsite.dart';
 
 class MainHomePage extends StatefulWidget {
   const MainHomePage({super.key});
@@ -37,7 +36,7 @@ class _MainHomePageState extends State<MainHomePage> {
     const ProjectSites(),
     const Text("research Team"),
     const Text("what's new"),
-    const SignIn(),
+    const SigninHomepage(),
   ];
 
   List navItem = [

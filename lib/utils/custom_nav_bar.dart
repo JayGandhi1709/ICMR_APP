@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../pages/SignInPage/signin.dart';
-
 class customNavBar extends StatefulWidget {
   customNavBar({
     super.key,

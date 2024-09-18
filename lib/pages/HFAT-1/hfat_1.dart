@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:icmr/pages/HFAT-1/my_form.dart';
-import 'package:icmr/pages/HFAT-1/question.dart';
 import 'package:icmr/utils/custom_app_bar.dart';
+
+import '../Forms/HFAT-1/FormB.dart';
 
 class OLDHFAT1 extends StatefulWidget {
   const OLDHFAT1({super.key});
@@ -59,77 +60,6 @@ class _OLDHFAT1State extends State<OLDHFAT1> {
                 questions: hfat1FormB,
               ),
 
-              // Table(
-              //   border: TableBorder.all(
-              //     width: 2
-              //   ),
-              //   columnWidths: const <int, TableColumnWidth>{
-              //     0: FlexColumnWidth(),
-              //     1: FixedColumnWidth(200),
-              //     2: FixedColumnWidth(250),
-              //     3: FixedColumnWidth(100),
-              //     4: FixedColumnWidth(100),
-              //   },
-              //   children: [
-              //     TableRow(
-              //       children: [
-              //         TableCell(
-              //           child: Text('Manpower'),
-              //         ),
-              //         TableCell(
-              //           child: Text('Number'),
-              //         ),
-              //         TableCell(
-              //           child: Text('24/7 Availablity'),
-              //         ),
-              //         TableCell(
-              //           child: Text('On-site Availability'),
-              //         ),
-              //         TableCell(
-              //           child: Text('On-call Availability'),
-              //         ),
-              //       ],
-              //     ),
-              //     TableRow(
-              //       children: [
-              //         TableCell(
-              //           child: Row(
-              //             children: [
-              //               Checkbox(
-              //                 value: false,
-              //                 onChanged: null,
-              //               ),
-              //               Text('Facilty/Consultant'),
-              //             ],
-              //           ),
-              //         ),
-              //         TableCell(
-              //           child: CustomTextFormField(
-              //             title: 'Number',
-              //             controller: TextEditingController(),
-              //           ),
-              //         ),
-              //         TableCell(
-              //           child: CustomRadioFormField(
-              //             title: '24/7 Availablity',
-              //             options: [
-              //               RadioOption(label: "Yes"),
-              //               RadioOption(label: "No"),
-              //             ],
-              //             controller: '',
-              //           ),
-              //         ),
-              //         TableCell(
-              //           child: Text('Cell 5'),
-              //         ),
-              //         TableCell(
-              //           child: Text('Cell 6'),
-              //         ),
-              //       ],
-              //     ),
-              //   ],
-              // ),
-
               const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () {
@@ -179,77 +109,6 @@ class _OLDHFAT1State extends State<OLDHFAT1> {
             ],
           ),
         ),
-        //   child: Form(
-        //     key: _formKey,
-        //     child: Column(
-        //       crossAxisAlignment: CrossAxisAlignment.start,
-        //       children: <Widget>[
-        //         // write a code for radio button [o1,o2,o3]
-        //         CustomRadioFormField(
-        //           title: 'Select your favorite fruits:',
-        //           subtitle: 'Select your favorite fruits:',
-        //           options: _options,
-        //           controller: _selectedRadioOptions,
-        //           onSaved: (value) {
-        //             setState(() {
-        //               _selectedRadioOptions = value!;
-        //             });
-        //           },
-        //           onChanged: (String value) {
-        //             setState(() {
-        //               // _selectedOptions = Option.getSelectedOptions(value);
-        //               _selectedRadioOptions = value;
-        //             });
-        //           },
-        //         ),
-        //         Padding(
-        //           padding: const EdgeInsets.all(8.0),
-        //           child: CustomTextFormField(
-        //             title: 'question',
-        //             controller: _controller,
-        //             // onChanged: (value) {
-        //             //   setState(() {
-        //             //     _controller.text = value;
-        //             //   });
-        //             // },
-        //           ),
-        //         ),
-
-        //         _selectedRadioOptions == "Option 1"
-        //             ? CustomCheckBoxFormField(
-        //                 title: 'Select your favorite fruits:',
-        //                 options: _options1,
-        //                 controller: _selectedOptions,
-        //                 onSaved: (value) {
-        //                   print("Comming");
-        //                   setState(() {
-        //                     _selectedOptions =
-        //                         CheckBoxOption.getSelectedOptions(value!);
-        //                   });
-        //                 },
-        //                 onChanged: (value) {
-        //                   print("Comming");
-        //                 },
-        //                 validator: (value) {
-        //                   print("Comming");
-        //                 },
-        //               )
-        //             : const SizedBox(),
-        //         const SizedBox(height: 20),
-        //         ElevatedButton(
-        //           onPressed: () {
-        //             if (_formKey.currentState!.validate()) {
-        //               _formKey.currentState!.save();
-        //               ScaffoldMessenger.of(context).showSnackBar(
-        //                 const SnackBar(content: Text('Form Submitted')),
-        //               );
-        //             }
-        //           },
-        //           child: const Text('Submit'),
-        //         ),
-        //       ],
-        //     ),
-        //   ),
       ),
     );
   }

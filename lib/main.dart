@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:icmr/pages/Forms/HFAT-1/HFAT_1.dart';
+import 'package:icmr/pages/afterLogin/signIn_homePage.dart';
+import 'package:icmr/pages/main_home_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -38,7 +40,7 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: const HFAT1(),
+      home: const MainHomePage(),
       // home: MainHomePage(),
     );
   }

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:icmr/pages/beforeLogin/signin.dart';
 import 'package:icmr/utils/custom_app_bar.dart';
 import 'package:icmr/utils/custom_nav_bar.dart';
 
+import 'afterLogin/data_collection.dart';
 import 'afterLogin/methodology.dart';
 import 'afterLogin/objective.dart';
 import 'afterLogin/outcomes.dart';
@@ -18,7 +20,7 @@ class MainHomePage extends StatefulWidget {
 }
 
 class _MainHomePageState extends State<MainHomePage> {
-  bool isLogin = false;
+  bool isLogin = true;
   int selectedIndex = 0;
   List<Widget> loginScreens = [
     const SigninHomepage(),
@@ -27,7 +29,7 @@ class _MainHomePageState extends State<MainHomePage> {
     const Methodology(),
     const Text("Facilities"),
     const Text("Workflow"),
-    const Text("Data Collection"),
+    const DataCollection(),
     const HomePage(),
   ];
   List<Widget> afterLoginScreens = [
@@ -36,7 +38,7 @@ class _MainHomePageState extends State<MainHomePage> {
     const ProjectSites(),
     const Text("research Team"),
     const Text("what's new"),
-    const SigninHomepage(),
+    const SignIn(),
   ];
 
   List navItem = [

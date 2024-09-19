@@ -60,11 +60,10 @@ class _HFAT1State extends State<HFAT1> {
       },
       onNext: () {
         setState(() {
-          if (currentFormIndex <= listOfQuestion.length) {
+          if (currentFormIndex < listOfQuestion.length-1) {
             currentFormIndex += 1;
           }
         });
-        print(currentFormIndex);
       },
     );
   }

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:icmr/components/Layout/HFAT_Layout/SidePanel.dart';
+import 'package:icmr/components/custom_table.dart';
+import 'package:icmr/components/models/table_row_model.dart';
 import 'package:icmr/utils/custom_app_bar.dart';
 
 import '../../custom_checkbox_form_field.dart';
@@ -224,8 +226,25 @@ class _FormLayoutState extends State<FormLayout> {
                                                               ? CustomDate(
                                                                   title: question
                                                                       .question)
-                                                              : const SizedBox
-                                                                  .shrink(),
+                                                              : question.type ==
+                                                                      "table"
+                                                                  ? CustomTable(
+                                                                      headers:
+                                                                          question
+                                                                              .tableHeaders!,
+                                                                      rowData:
+                                                                          question
+                                                                              .tableRows!,
+                                                                      width: const [
+                                                                        0.3,
+                                                                        0.3,
+                                                                        0.2,
+                                                                        0.2,
+                                                                        0.2
+                                                                      ],
+                                                                    )
+                                                                  : const SizedBox
+                                                                      .shrink(),
                                             ),
                                           ],
                                         );

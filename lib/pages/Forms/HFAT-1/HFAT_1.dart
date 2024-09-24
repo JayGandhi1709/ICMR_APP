@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:icmr/pages/Forms/HFAT-1/FormD.dart';
 
-import '../../../components/Layout/HFAT_Layout/Forms_Layout.dart';
+import '../../../components/Layout/HFAT_Layout/forms_layout.dart';
 import 'FormA.dart';
 import 'FormB.dart';
 import 'FormC.dart';
@@ -60,7 +60,7 @@ class _HFAT1State extends State<HFAT1> {
       },
       onNext: () {
         setState(() {
-          if (currentFormIndex < listOfQuestion.length-1) {
+          if (currentFormIndex < listOfQuestion.length - 1) {
             currentFormIndex += 1;
           }
         });

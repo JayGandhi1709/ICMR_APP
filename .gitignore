@@ -148,7 +148,7 @@ app.*.map.json
 !.vscode/settings.json
 
 pubspec.lock
-lib/components/Layout/HFAT_Layout/Forms_Layout.dart
+lib/components/Layout/HFAT_Layout/forms_layout.dart
 linux/flutter/generated_plugin_registrant.cc
 linux/flutter/generated_plugin_registrant.h
 linux/flutter/generated_plugins.cmake

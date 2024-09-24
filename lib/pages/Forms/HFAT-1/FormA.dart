@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 import '../../../components/models/question.dart';
 import '../../../components/models/radio_option.dart';

@@ -2,13 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:icmr/components/models/table_row_model.dart';
 
 class CustomTable extends StatefulWidget {
-  const CustomTable({super.key, required this.headers, required this.rowData, required this.width});
+  const CustomTable(
+      {super.key,
+      required this.headers,
+      required this.rowData,
+      required this.width});
 
   final List headers;
   final List<TableRowModel> rowData;
 
   final List width;
-
 
   @override
   State<CustomTable> createState() => _CustomTableState();
@@ -27,16 +30,29 @@ class _CustomTableState extends State<CustomTable> {
       children: [
         TableRow(
           children: [
-            ...widget.headers.map((header) => TableCell(
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(header,style: TextStyle(fontWeight: FontWeight.bold),),
+            ...widget.headers.map(
+              (header) => TableCell(
+                child: Container(
+                  color: const Color.fromRGBO(21, 34, 102, 0.9),
+                  padding: const EdgeInsets.all(8.0),
+                  child: Center(
+                    child: Text(
+                      header,
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontFamily: "Poppins",
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ),
               ),
-            )),
+            ),
           ],
         ),
         ...widget.rowData.map(
-              (data) {
+          (data) {
             return tableField(
               isChecked: data.isChecked,
               checkBoxOnChange: (bool? value) {
@@ -72,7 +88,6 @@ class _CustomTableState extends State<CustomTable> {
   }
 }
 
-
 TableRow tableField({
   required bool isChecked,
   required ValueChanged<bool?> checkBoxOnChange,
@@ -99,12 +114,12 @@ TableRow tableField({
               Expanded(child: Text(name!)),
               textField && isChecked
                   ? Expanded(
-                child: TextFormField(
-                  decoration: const InputDecoration(
-                    border: InputBorder.none,
-                  ),
-                ),
-              )
+                      child: TextFormField(
+                        decoration: const InputDecoration(
+                          border: InputBorder.none,
+                        ),
+                      ),
+                    )
                   : Container()
             ],
           ),
@@ -113,87 +128,76 @@ TableRow tableField({
       TableCell(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
-          child: isChecked
-              ? SizedBox(
+          child: SizedBox(
             width: double.infinity,
             child: TextFormField(
+              enabled: isChecked,
               decoration: const InputDecoration(
-                border: InputBorder.none,
+                border: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Colors.blue,
+                    width: 5,
+                  ),
+                ),
               ),
-            ),
-          )
-              : Container(
-            height: 30.0,
-            width: 30.0,
-            decoration: BoxDecoration(
-              color: Colors.grey[300],
             ),
           ),
         ),
       ),
       TableCell(
-        child: Column(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            ListTile(
-              title: const Text('Yes'),
-              leading: Radio<String>(
-                value: 'Yes',
-                groupValue: selectedOption,
-                onChanged: isChecked ? radioButtonOnChange : null,
-              ),
+            Radio<String>(
+              value: 'Yes',
+              groupValue: selectedOption,
+              onChanged: isChecked ? radioButtonOnChange : null,
             ),
-            ListTile(
-              title: const Text('No'),
-              leading: Radio<String>(
-                value: 'No',
-                groupValue: selectedOption,
-                onChanged: isChecked ? radioButtonOnChange : null,
-              ),
+            const Text('Yes'),
+            Radio<String>(
+              value: 'No',
+              groupValue: selectedOption,
+              onChanged: isChecked ? radioButtonOnChange : null,
             ),
+            const Text('No'),
           ],
         ),
       ),
       TableCell(
-        child: Column(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            ListTile(
-              title: const Text('Yes'),
-              leading: Radio<String>(
-                value: 'Yes',
-                groupValue: selectedOption1,
-                onChanged: isChecked ? radioButtonOnChange1 : null,
-              ),
+            Radio<String>(
+              value: 'Yes',
+              groupValue: selectedOption1,
+              onChanged: isChecked ? radioButtonOnChange1 : null,
             ),
-            ListTile(
-              title: const Text('No'),
-              leading: Radio<String>(
-                value: 'No',
-                groupValue: selectedOption1,
-                onChanged: isChecked ? radioButtonOnChange1 : null,
-              ),
+            const Text('Yes'),
+            Radio<String>(
+              value: 'No',
+              groupValue: selectedOption1,
+              onChanged: isChecked ? radioButtonOnChange1 : null,
             ),
+            const Text('No'),
           ],
         ),
       ),
       TableCell(
-        child: Column(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            ListTile(
-              title: const Text('Yes'),
-              leading: Radio<String>(
-                value: 'Yes',
-                groupValue: selectedOption2,
-                onChanged: isChecked ? radioButtonOnChange2 : null,
-              ),
+            Radio<String>(
+              value: 'Yes',
+              groupValue: selectedOption2,
+              onChanged: isChecked ? radioButtonOnChange2 : null,
             ),
-            ListTile(
-              title: const Text('No'),
-              leading: Radio<String>(
-                value: 'No',
-                groupValue: selectedOption2,
-                onChanged: isChecked ? radioButtonOnChange2 : null,
-              ),
+            const Text('Yes'),
+            Radio<String>(
+              value: 'No',
+              groupValue: selectedOption2,
+              onChanged: isChecked ? radioButtonOnChange2 : null,
             ),
+            const Text('No'),
           ],
         ),
       ),

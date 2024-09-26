@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:icmr/components/models/table_row_model.dart';
 
 class CustomTable extends StatefulWidget {
@@ -131,6 +132,10 @@ TableRow tableField({
           child: SizedBox(
             width: double.infinity,
             child: TextFormField(
+              keyboardType: TextInputType.number,
+              inputFormatters: <TextInputFormatter>[
+                FilteringTextInputFormatter.digitsOnly, // Allows only digits
+              ],
               enabled: isChecked,
               decoration: const InputDecoration(
                 border: OutlineInputBorder(

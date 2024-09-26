@@ -13,6 +13,7 @@ class Question {
   dynamic value;
   final List? tableHeaders;
   final List<TableRowModel>? tableRows;
+  final bool visible;
 
   Question({
     required this.type,
@@ -26,5 +27,6 @@ class Question {
     required this.value,
     this.tableRows,
     this.tableHeaders,
+    this.visible = true
   });
 }

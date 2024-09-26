@@ -142,110 +142,113 @@ class _FormLayoutState extends State<FormLayout> {
                                     children: [
                                       const SizedBox(height: 20),
                                       ...widget.questions.map((question) {
-                                        return Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Text(
-                                              question.question,
-                                              style: const TextStyle(
-                                                fontSize: 16,
-                                                fontFamily: 'Poppins',
-                                                fontWeight: FontWeight.bold,
-                                              ),
-                                            ),
-                                            const SizedBox(height: 30),
-                                            if (question.subtitle != null)
+                                        return Visibility(
+                                          visible: question.visible,
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
                                               Text(
-                                                question.subtitle!,
+                                                question.question,
                                                 style: const TextStyle(
-                                                  fontSize: 14,
+                                                  fontSize: 16,
                                                   fontFamily: 'Poppins',
                                                   fontWeight: FontWeight.bold,
                                                 ),
                                               ),
-                                            Padding(
-                                              padding: const EdgeInsets.only(
-                                                  bottom: 15),
-                                              child: question.type == "text"
-                                                  ? CustomTextFormField(
-                                                      title: question.question,
-                                                      subtitle:
-                                                          question.subtitle,
-                                                      controller:
-                                                          question.value,
-                                                      validator:
-                                                          question.validator,
-                                                      inputformatters: question
-                                                          .inputformatters,
-                                                    )
-                                                  : question.type == 'checkbox'
-                                                      ? CustomCheckBoxFormField(
-                                                          title:
-                                                              question.question,
-                                                          subtitle:
-                                                              question.subtitle,
-                                                          options: question
-                                                                      .options
-                                                                  is List<
-                                                                      CheckBoxOption>
-                                                              ? question.options
-                                                                  as List<
-                                                                      CheckBoxOption>
-                                                              : [],
-                                                          controller:
-                                                              question.value,
-                                                        )
-                                                      : question.type == 'radio'
-                                                          ? CustomRadioFormField(
-                                                              title: question
-                                                                  .question,
-                                                              subtitle: question
-                                                                  .subtitle,
-                                                              options: question
-                                                                          .options
-                                                                      is List<
-                                                                          RadioOption>
-                                                                  ? question
-                                                                          .options
-                                                                      as List<
-                                                                          RadioOption>
-                                                                  : [],
-                                                              onChanged:
-                                                                  (value) {
-                                                                question.value =
-                                                                    value;
-                                                              },
-                                                              controller:
-                                                                  question
-                                                                      .value,
-                                                            )
-                                                          : question.type ==
-                                                                  "date"
-                                                              ? CustomDate(
-                                                                  title: question
-                                                                      .question)
-                                                              : question.type ==
-                                                                      "table"
-                                                                  ? CustomTable(
-                                                                      headers:
-                                                                          question
-                                                                              .tableHeaders!,
-                                                                      rowData:
-                                                                          question
-                                                                              .tableRows!,
-                                                                      width: const [
-                                                                        0.3,
-                                                                        0.3,
-                                                                        0.2,
-                                                                        0.2,
-                                                                        0.2
-                                                                      ],
-                                                                    )
-                                                                  : const SizedBox
-                                                                      .shrink(),
-                                            ),
-                                          ],
+                                              const SizedBox(height: 30),
+                                              if (question.subtitle != null)
+                                                Text(
+                                                  question.subtitle!,
+                                                  style: const TextStyle(
+                                                    fontSize: 14,
+                                                    fontFamily: 'Poppins',
+                                                    fontWeight: FontWeight.bold,
+                                                  ),
+                                                ),
+                                              Padding(
+                                                padding: const EdgeInsets.only(
+                                                    bottom: 15),
+                                                child: question.type == "text"
+                                                    ? CustomTextFormField(
+                                                        title: question.question,
+                                                        subtitle:
+                                                            question.subtitle,
+                                                        controller:
+                                                            question.value,
+                                                        validator:
+                                                            question.validator,
+                                                        inputformatters: question
+                                                            .inputformatters,
+                                                      )
+                                                    : question.type == 'checkbox'
+                                                        ? CustomCheckBoxFormField(
+                                                            title:
+                                                                question.question,
+                                                            subtitle:
+                                                                question.subtitle,
+                                                            options: question
+                                                                        .options
+                                                                    is List<
+                                                                        CheckBoxOption>
+                                                                ? question.options
+                                                                    as List<
+                                                                        CheckBoxOption>
+                                                                : [],
+                                                            controller:
+                                                                question.value,
+                                                          )
+                                                        : question.type == 'radio'
+                                                            ? CustomRadioFormField(
+                                                                title: question
+                                                                    .question,
+                                                                subtitle: question
+                                                                    .subtitle,
+                                                                options: question
+                                                                            .options
+                                                                        is List<
+                                                                            RadioOption>
+                                                                    ? question
+                                                                            .options
+                                                                        as List<
+                                                                            RadioOption>
+                                                                    : [],
+                                                                onChanged:
+                                                                    (value) {
+                                                                  question.value =
+                                                                      value;
+                                                                },
+                                                                controller:
+                                                                    question
+                                                                        .value,
+                                                              )
+                                                            : question.type ==
+                                                                    "date"
+                                                                ? CustomDate(
+                                                                    title: question
+                                                                        .question)
+                                                                : question.type ==
+                                                                        "table"
+                                                                    ? CustomTable(
+                                                                        headers:
+                                                                            question
+                                                                                .tableHeaders!,
+                                                                        rowData:
+                                                                            question
+                                                                                .tableRows!,
+                                                                        width: const [
+                                                                          0.3,
+                                                                          0.2,
+                                                                          0.2,
+                                                                          0.2,
+                                                                          0.2
+                                                                        ],
+                                                                      )
+                                                                    : const SizedBox
+                                                                        .shrink(),
+                                              ),
+                                            ],
+                                          ),
                                         );
                                       }),
                                     ],

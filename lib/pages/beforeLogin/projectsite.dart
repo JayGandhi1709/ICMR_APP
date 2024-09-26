@@ -15,7 +15,7 @@ class _ProjectSitesState extends State<ProjectSites> {
         padding: const EdgeInsets.all(10),
         child: Center(
           child: Image.asset(
-            'sites/sites.png',
+            'assets/sites/sites.png',
             height: MediaQuery.of(context).size.height * 0.8,
             width: MediaQuery.of(context).size.width * 0.8,
           ),

@@ -19,13 +19,13 @@ class _AboutProjectPageState extends State<AboutProjectPage> {
     "Snake Bite and Poisoning.",
   ];
   List<String> images = [
-    "AboutProject/burns.png",
-    "AboutProject/MI.png",
-    "AboutProject/Poisnoning.png",
-    "AboutProject/burns.png",
-    "AboutProject/pph.png",
-    "AboutProject/sankebites.png",
-    "AboutProject/STROKE.png",
+    "assets/AboutProject/burns.png",
+    "assets/AboutProject/MI.png",
+    "assets/AboutProject/Poisnoning.png",
+    "assets/AboutProject/burns.png",
+    "assets/AboutProject/pph.png",
+    "assets/AboutProject/sankebites.png",
+    "assets/AboutProject/STROKE.png",
   ];
 
   @override

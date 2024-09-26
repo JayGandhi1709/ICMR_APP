@@ -62,32 +62,32 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Image.asset(
-              '1.png',
+              'assets/1.png',
               height: MediaQuery.of(context).size.height * 0.15,
               width: MediaQuery.of(context).size.width * 0.15,
             ),
             Image.asset(
-              '2.png',
+              'assets/2.png',
               height: MediaQuery.of(context).size.height * 0.15,
               width: MediaQuery.of(context).size.width * 0.15,
             ),
             Image.asset(
-              '3.png',
+              'assets/3.png',
               height: MediaQuery.of(context).size.height * 0.15,
               width: MediaQuery.of(context).size.width * 0.15,
             ),
             Image.asset(
-              '4.png',
+              'assets/4.png',
               height: MediaQuery.of(context).size.height * 0.15,
               width: MediaQuery.of(context).size.width * 0.15,
             ),
             Image.asset(
-              '5.png',
+              'assets/5.png',
               height: MediaQuery.of(context).size.height * 0.15,
               width: MediaQuery.of(context).size.width * 0.15,
             ),
             Image.asset(
-              '6.png',
+              'assets/6.png',
               height: MediaQuery.of(context).size.height * 0.15,
               width: MediaQuery.of(context).size.width * 0.15,
             ),

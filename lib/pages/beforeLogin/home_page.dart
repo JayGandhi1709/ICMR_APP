@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:icmr/utils/custom_app_bar.dart';
-import 'package:icmr/utils/custom_nav_bar.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -57,7 +55,7 @@ class _HomePageState extends State<HomePage> {
                 decoration: const BoxDecoration(
                   image: DecorationImage(
                     image: AssetImage(
-                      "cuate.png",
+                      "assets/cuate.png",
                     ),
                   ),
                 ),

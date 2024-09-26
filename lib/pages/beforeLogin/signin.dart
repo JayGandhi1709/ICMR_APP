@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../utils/custom_app_bar.dart';
-
 class SignIn extends StatefulWidget {
   const SignIn({super.key});
 
@@ -160,7 +158,7 @@ class _SignInState extends State<SignIn> {
               decoration: const BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage(
-                    "signinImage.png",
+                    "assets/signinImage.png",
                   ),
                 ),
               ),

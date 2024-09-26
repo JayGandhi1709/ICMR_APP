@@ -16,7 +16,7 @@ class HFAT1 extends StatefulWidget {
 
 class _HFAT1State extends State<HFAT1> {
   bool isDataSubmited = false;
-  int currentFormIndex = 2;
+  int currentFormIndex = 0;
   final _formKey = GlobalKey<FormState>();
 
   final sidepanelList = [

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:icmr/pages/Forms/CST/CST.dart';
 
 import '../Forms/HFAT-1/HFAT_1.dart';
 
@@ -24,7 +25,10 @@ class _DataCollectionState extends State<DataCollection> {
               const SizedBox(height: 10),
               InkWell(
                 onTap: () {
-                  Navigator.pushNamed(context, '/form1');
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const CST()),
+                  );
                 },
                 child: ListTile(
                   title: Text(

@@ -11,7 +11,7 @@ import '../../models/checkbox_option.dart';
 import '../../models/question.dart';
 import '../../models/radio_option.dart';
 
-class FormLayout extends StatefulWidget {
+class CstFormsLayout extends StatefulWidget {
   final String heading;
   final String title;
   final String? subtitle;
@@ -24,7 +24,7 @@ class FormLayout extends StatefulWidget {
   final String? prevText;
   final String nextText;
 
-  const FormLayout({
+  const CstFormsLayout({
     super.key,
     required this.heading,
     required this.title,
@@ -40,10 +40,10 @@ class FormLayout extends StatefulWidget {
   });
 
   @override
-  State<FormLayout> createState() => _FormLayoutState();
+  State<CstFormsLayout> createState() => _CstFormsLayoutState();
 }
 
-class _FormLayoutState extends State<FormLayout> {
+class _CstFormsLayoutState extends State<CstFormsLayout> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

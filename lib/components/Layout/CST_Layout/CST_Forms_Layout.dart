@@ -185,7 +185,7 @@ class _CstFormsLayoutState extends State<CstFormsLayout> {
                                                   fontWeight: FontWeight.bold,
                                                 ),
                                               ),
-                                              const SizedBox(height: 30),
+                                              const SizedBox(height: 10),
                                               if (question.subtitle != null)
                                                 Text(
                                                   question.subtitle!,
@@ -197,11 +197,12 @@ class _CstFormsLayoutState extends State<CstFormsLayout> {
                                                 ),
                                               Padding(
                                                 padding: const EdgeInsets.only(
-                                                    bottom: 15),
+                                                    bottom: 30),
                                                 child: question.type == "text"
                                                     ? CustomTextFormField(
                                                         title:
                                                             question.question,
+                                                        // enable: question.enable,
                                                         subtitle:
                                                             question.subtitle,
                                                         controller:
